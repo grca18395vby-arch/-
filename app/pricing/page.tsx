@@ -1,0 +1,7 @@
+import type { Metadata } from "next";
+import { Check, MessageCircle } from "lucide-react";
+import { pricingPlans } from "@/data/pricing";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+
+export const metadata: Metadata = { title: "套餐与价格", description: "按场景评估深度寻知的个人、开发者与企业服务方案。" };
+export default function PricingPage() { return <><section className="page-hero pricing-hero"><div className="container"><span className="eyebrow">PLANS / BY SCENARIO</span><h1>先确认需求，<br /><span>再选择合适的方式</span></h1><p>当前展示为演示套餐结构。价格未在此页面虚构填写，实际服务范围与费用以需求评估和确认结果为准。</p></div></section><section className="section"><div className="container"><div className="pricing-grid">{pricingPlans.map((plan) => <div className={`price-card ${plan.featured ? "featured" : ""}`} key={plan.name}>{plan.featured && <span className="recommended">常见选择</span>}<span className="eyebrow">{plan.label}</span><h2>{plan.name}</h2><p>{plan.description}</p><div className="price-placeholder"><strong>咨询报价</strong><span>根据需求评估</span></div><div className="price-rule" />{plan.features.map((feature) => <div className="price-feature" key={feature}><Check size={15} /> {feature}</div>)}<ButtonLink href="/contact" variant={plan.featured ? "primary" : "secondary"}>{plan.cta}</ButtonLink></div>)}</div><div className="pricing-note"><MessageCircle size={18} /><p>不设置虚构原价、折扣、倒计时或限时活动。API 服务可按量计费，企业方案将根据规模、部署与交付范围单独评估。</p></div></div></section></>; }

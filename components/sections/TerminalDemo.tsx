@@ -1,0 +1,3 @@
+import { Check, Terminal } from "lucide-react";
+
+export function TerminalDemo() { return <div className="terminal-demo"><div className="terminal-bar"><span><i /><i /><i /></span><span><Terminal size={13} /> codex-workspace</span><small>EXAMPLE ONLY</small></div><div className="terminal-content"><p><span className="prompt">$</span> codex skills list</p><p className="muted">installed skills · 12 available</p><p><span className="prompt">$</span> codex skills install <strong>example-skill</strong></p><p className="success"><Check size={13} /> example-skill configured <em>(demo)</em></p><p><span className="prompt">$</span> codex skills verify</p><p className="success"><Check size={13} /> workspace ready <em>(demo)</em></p><span className="cursor" /></div></div>; }

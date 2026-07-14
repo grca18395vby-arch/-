@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { ArrowUpRight, Compass, Eye, Layers3, ShieldCheck } from "lucide-react";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+
+export const metadata: Metadata = { title: "关于我们", description: "了解深度寻知的定位、服务方式与技术服务边界。" };
+export default function AboutPage() { return <><section className="page-hero about-hero"><div className="container"><span className="eyebrow">ABOUT DEEP INSIGHT</span><h1>把复杂的 AI 服务，<br /><span>讲清楚、做扎实</span></h1><p>深度寻知是一家 AI 工具服务与开发者基础设施服务商，为个人用户、开发者和企业提供一站式的咨询、接入和部署支持。</p></div></section><section className="section"><div className="container about-grid"><div className="about-manifesto"><span className="eyebrow">OUR POSITION</span><h2>连接能力，<br /><span>也连接信任</span></h2><p>我们关注的不只是“能不能用”，也关注服务边界是否清晰、技术交付是否可理解，以及使用过程中的安全与合规。</p><ButtonLink href="/contact">与我们沟通</ButtonLink></div><div className="about-values">{[[Compass,"场景出发","先理解真实需求，再确认适合的产品和技术方案。"],[Layers3,"一站式服务","把工具使用、开发接入和运行部署放在同一条服务路径上。"],[ShieldCheck,"边界清晰","不虚构品牌授权、业务指标和服务能力，重要限制提前说明。"],[Eye,"长期可见","用可维护、可复用的方式承接服务，保留后续扩展空间。"]].map(([Icon, title, text]) => <div className="value-card" key={title as string}><Icon size={19} /><div><h3>{title as string}</h3><p>{text as string}</p></div><ArrowUpRight size={15} /></div>)}</div></div></section></>; }

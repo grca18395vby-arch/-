@@ -1,0 +1,6 @@
+import type { Metadata } from "next";
+import { CheckCircle2, Clock3, Info } from "lucide-react";
+
+export const metadata: Metadata = { title: "服务状态", description: "查看深度寻知服务状态说明与维护信息。" };
+const systems = ["官网与帮助中心", "API 网关演示环境", "AI 聚合平台演示", "咨询与工单入口", "部署服务咨询"];
+export default function StatusPage() { return <><section className="page-hero compact-page-hero"><div className="container"><span className="eyebrow">STATUS / TRANSPARENCY</span><h1>服务状态，<span>一目了然</span></h1><p>当前页面展示服务状态组件的产品结构。未接入真实监控数据，状态均为演示状态。</p></div></section><section className="section"><div className="container status-panel"><div className="status-summary"><div><span className="status-icon"><CheckCircle2 /></span><div><strong>演示环境运行正常</strong><p>最后检查：2026-07-15 16:42（演示）</p></div></div><span className="demo-badge">DEMO STATUS</span></div><div className="status-list">{systems.map((system) => <div key={system}><span className="status-name"><i />{system}</span><span className="status-ok">Operational</span><small>演示数据</small></div>)}</div><div className="status-note"><Info size={16} />生产环境可在后续接入真实监控、维护公告和历史可用性记录。</div><div className="maintenance-card"><Clock3 size={18} /><div><strong>维护信息</strong><p>目前没有已确认的维护安排。任何正式维护时间应在确认后发布，当前不构造虚假时间表。</p></div></div></div></section></>; }
