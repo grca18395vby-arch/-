@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { CheckCircle2, Loader2, Send } from "lucide-react";
 
-const serviceOptions = ["ChatGPT 订阅咨询", "API 服务", "国际短信验证", "网络环境部署", "AI 聚合平台", "Codex Skill 安装", "Codex 中文化", "企业定制", "售后问题", "其他"];
+const serviceOptions = ["ChatGPT 订阅咨询", "API 服务", "国际短信验证", "网络环境部署", "AI 聚合平台", "企业垂直领域智能体", "Codex Skill 安装", "Codex 中文化", "企业定制", "售后问题", "其他"];
 export function ContactForm() {
   const [loading, setLoading] = useState(false); const [success, setSuccess] = useState(false); const [error, setError] = useState("");
   const submit = async (event: React.FormEvent<HTMLFormElement>) => { event.preventDefault(); setError(""); const form = event.currentTarget; const data = new FormData(form); const email = String(data.get("email") || ""); const contact = String(data.get("contact") || ""); if (!data.get("name") || !contact || !email || !data.get("description") || !data.get("agree")) { setError("请补全必填字段，并勾选同意用户协议。"); return; } if (!/^\S+@\S+\.\S+$/.test(email)) { setError("请输入有效的电子邮箱。"); return; } if (contact.trim().length < 4) { setError("请填写有效的联系方式。"); return; } setLoading(true); await new Promise((resolve) => setTimeout(resolve, 900)); setLoading(false); setSuccess(true); form.reset(); };
