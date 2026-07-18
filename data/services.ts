@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Braces, Cable, CloudCog, Code2, Languages, MessageSquare, PlugZap, Server, ShieldCheck, Smartphone, Sparkles } from "lucide-react";
+import { Braces, Bot, Cable, CloudCog, Code2, Languages, MessageSquare, PlugZap, Server, ShieldCheck, Smartphone, Sparkles } from "lucide-react";
 
 export type Service = {
   slug: string;
@@ -75,6 +75,21 @@ export const services: Service[] = [
     audience: ["AI 应用开发与 API 服务运行", "企业内部工具与知识库部署", "远程开发与跨区域业务系统"],
     cta: "获取部署方案",
     compliance: "所有网络和服务器服务仅用于合法业务、软件开发、远程协作和企业数字化场景。",
+  },
+  {
+    slug: "enterprise-agent",
+    name: "企业垂直领域智能体",
+    shortName: "垂直智能体",
+    description: "围绕企业具体业务流程，定制具备知识理解、任务执行与协同能力的领域智能体。",
+    icon: Bot,
+    tone: "violet",
+    tags: ["企业定制", "知识库接入", "流程自动化"],
+    href: "/services/enterprise-agent",
+    eyebrow: "面向企业团队",
+    bullets: ["行业知识库与内部资料接入", "企业专属角色与权限设计", "业务流程自动化与任务编排", "多轮问答、检索与引用溯源", "内部系统与 API 对接规划", "人工审核与安全边界设计", "试点验证与效果评估", "持续运营与版本迭代"],
+    audience: ["需要把专业知识沉淀为可复用能力的企业", "希望减少重复人工处理、提升业务响应效率的团队", "需要连接内部系统和业务流程的垂直行业项目"],
+    cta: "咨询定制方案",
+    compliance: "企业智能体的知识、权限、接口和部署方式需要根据真实业务进行评估；演示阶段仅展示服务范围，不代表已接入任何企业内部数据或系统。",
   },
   {
     slug: "ai",
